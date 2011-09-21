@@ -1,2 +1,22 @@
-<h1>Login#index</h1>
-<p>Find me in app/views/login/index.html.erb</p>
+<body >
+  <div align="center">
+    <h1>Sudoku</h1>
+
+    <p>Please type in given numbers in the table below</p>
+    <% form_remote_tag :url => {:controller => :calculation, :action => :calculate } do |form| %>
+	<p id="squares">
+	  <% (0..8).each do |row| %>
+	    <% (0..8).each do |column| %>
+	      <%= text_field_tag "squares[#{row}_#{column}]", '',:size => 1 %>
+	      <%= "&nbsp;" if column == 2 or column == 5 %>
+	    <% end %>
+	    <br>
+	    <%= "<br>" if row == 2 or row == 5 %>
+	  <% end %>
+      </p>
+
+    <%= submit_tag "Solve" %>
+		
+    <% end %>
+  </div>
+</body>
