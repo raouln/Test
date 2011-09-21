@@ -7,7 +7,7 @@
 	<p id="squares">
 	  <% (0..8).each do |row| %>
 	    <% (0..8).each do |column| %>
-	      <%= text_field_tag "squares[#{row}_#{column}]", '',:size => 1 %>
+	      <%= text_field_tag "squares[#{row}_#{column}]", '', :size => 1 %>
 	      <%= "&nbsp;" if column == 2 or column == 5 %>
 	    <% end %>
 	    <br>
