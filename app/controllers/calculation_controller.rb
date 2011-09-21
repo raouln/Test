@@ -1,20 +1,7 @@
 class CalculationController < ApplicationController
 
   def calculate
-#     raise params.inspect
-    render :update do |page|
-      (0..8).each do |row|
-	(0..8).each do |column|
-	  page.insert_html :bottom, 'squares', "<input id='square_#{row}_#{column}' type='text' value='' size='1' name='square[#{row}_#{column}]'>"
-	      #text_field_tag "squares[#{row}_#{column}]", '',:size => 1) 	
-	end
-	page.insert_html :bottom, 'squares', '<br>'
-      end
-    end
     table = setup_table
-
-    
-    
   end  
 
   private
